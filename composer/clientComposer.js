@@ -18,5 +18,13 @@ bot.filter(hears("registerClient"), async (ctx) => {
     await ctx.conversation.enter("registerReportConversation")
 })
 
+bot.filter(hears("downloadReport"), async (ctx) => {
+    await ctx.conversation.enter("reportsConversation")
+})
+
+bot.filter(hears("cancelOperation"), async (ctx) => {
+    await ctx.conversation.enter("mainMenyuConversation")
+})
+
 
 export default bot

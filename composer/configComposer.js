@@ -35,6 +35,27 @@ bot.use(conversations())
 bot.use(i18n);
 bot.use(hydrate())
 
+// Auth va conversation management middleware
+bot.use(async (ctx, next) => {
+    const ADMIN_IDS = [1038293334, 5011373330]
+    let permissions = [ctx.t('backToMainMenu'), ctx.t('backToServiceMenu'), ctx.t('backToYearMenu'), '/start', ctx.t('cancelOperation')]
+    
+    if (permissions.includes(ctx.message?.text)) {
+        const stats = await ctx.conversation.active();
+        for (let key of Object.keys(stats)) {
+            await ctx.conversation.exit(key);
+        }
+    }
+    ctx.config = {
+        isAdmin: ADMIN_IDS.includes(ctx.from.id),
+        isAuth: false,
+        notificationId: null, // notificationId ni keyinroq qo'shamiz
+    }
+
+
+    await next()
+})
+
 registerConversations(bot)
 
 
