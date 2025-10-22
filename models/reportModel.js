@@ -57,9 +57,10 @@ const reportSchema = new mongoose.Schema({
     // Status
     status: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
-        maxlength: 200
+        maxlength: 200,
+        default: ''
     },
     
     // Telegram foydalanuvchi ma'lumotlari

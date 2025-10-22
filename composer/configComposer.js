@@ -4,6 +4,8 @@ import { Composer, session, MemorySessionStorage } from "grammy";
 import { hydrate } from "@grammyjs/hydrate";
 import { conversations } from "@grammyjs/conversations";
 import { registerConversations } from "../conversations/index.js";
+import config from '../config/config.js';
+
 
 
 const bot = new Composer()
@@ -35,9 +37,27 @@ bot.use(conversations())
 bot.use(i18n);
 bot.use(hydrate())
 
+bot.command('my_chat_id', async(ctx) => {
+    await ctx.reply(`
+<b>Your chat ID:</b> ${ctx.from.id}        
+<b>Your username:</b> ${ctx.from.username}
+<b>Your first name:</b> ${ctx.from?.first_name || 'Noma\'lum'}
+        `, { parse_mode: 'HTML' })
+})
+
 // Auth va conversation management middleware
 bot.use(async (ctx, next) => {
-    const ADMIN_IDS = [1038293334, 5011373330]
+    // Get admin IDs from environment variables
+    const ADMIN_IDS = config.adminIds;
+    if (!ADMIN_IDS.includes(ctx.from.id)) {
+        await ctx.reply(`
+<b>⚠️ Sizga ruxsat etilmadi</b>    
+<i>Bot faqat Navoiy ATX operatorlari uchun.</i>       
+            `, { parse_mode: 'HTML' })
+        return
+    }
+
+
     let permissions = [ctx.t('backToMainMenu'), ctx.t('backToServiceMenu'), ctx.t('backToYearMenu'), '/start', ctx.t('cancelOperation')]
     
     if (permissions.includes(ctx.message?.text)) {

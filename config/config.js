@@ -13,6 +13,9 @@ const config = {
   
   // Logging
   logLevel: process.env.LOG_LEVEL || 'info',
+
+  // Admin IDs  
+  adminIds: process.env.ADMIN_IDS?.split(',').map(id => parseInt(id.trim())).filter(id => !isNaN(id)) || [],
   
   // Database configuration
   database: {

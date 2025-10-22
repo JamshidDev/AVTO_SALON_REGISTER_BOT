@@ -2,58 +2,71 @@
 export const carModels = [
     {
         id: 1,
-        name: '🚐 LABO'
+        name: '🚐 LABO',
+        originalName: 'LABO'
     },
     {
         id: 2,
-        name: '🚐 DAMAS'
+        name: '🚐 DAMAS',
+        originalName: 'DAMAS'
     },
     {
         id: 3,
-        name: '🚗 N400'
+        name: '🚐 N400',
+        originalName: 'N400'
     },
     {
         id: 4,
-        name: '🚗 COBALT'
+        name: '🚗 COBALT',
+        originalName: 'COBALT'
     },
     {
         id: 5,
-        name: '🚗 ONIX'
+        name: '🚗 ONIX',
+        originalName: 'ONIX'
     },
     {
         id: 6,
-        name: '🚙 TRACKER'
+        name: '🚙 TRACKER',
+        originalName: 'TRACKER'
     },
     {
         id: 7,
-        name: '🚙 CAPTIVA'
+        name: '🚙 CAPTIVA',
+        originalName: 'CAPTIVA'
     },
     {
         id: 8,
-        name: '🚗 MALIBU 2'
+        name: '🚗 MALIBU 2',
+        originalName: 'MALIBU 2'
     },
     {
         id: 9,
-        name: '🚙 TAHOE'
+        name: '🚙 TAHOE',
+        originalName: 'TAHOE'
     },
     {
         id: 10,
-        name: '🛠️ SERVISE'
+        name: '🛠️ SERVISE',
+        originalName: 'SERVISE'
     }
 ]
 
 export const paymentMethods = [ 
     {
         id: 1,
-        name: '💵 Naqd pul'
+        name: '💵 Naqd pul',
+        originalName: 'Naqd pul'
     },
     {
         id: 2,
-        name: '💳 Kredit'
+        name: '💳 Kredit',
+        originalName: 'Kredit'
     },
     {
         id: 3,
-        name: "📅 Muddatli to'lov"
+        name: "📅 Muddatli to'lov",
+        originalName: "Muddatli to'lov"
     },
     
 ]
@@ -61,101 +74,132 @@ export const paymentMethods = [
 export const workplaceType = [
     {
         id: 1,
-        name: '👨‍🏫 O\'QTUVCHI'
+        name: '👨‍🏫 O\'QTUVCHI',
+        originalName: "O'QTUVCHI"
     },
     {
         id: 2,
-        name: '👨‍⚕️ DOKTOR'
+        name: '👨‍⚕️ DOKTOR',
+        originalName: 'DOKTOR'
     },
     {
         id: 3,
-        name: '👨‍💼 TADBIRKOR'
+        name: '👨‍💼 TADBIRKOR',
+        originalName: 'TADBIRKOR'
     },
     {
         id: 4,
-        name: '🪖 HARBIY'
+        name: '🪖 HARBIY',
+        originalName: 'HARBIY'
     },
     {
         id: 5,
-        name: '🏭 KAMBINAT'
+        name: '🏭 KAMBINAT',
+        originalName: 'KAMBINAT'
     },
     {
         id: 6,
-        name: '🏭 NAVOIY AZOT'
+        name: '🏭 NAVOIY AZOT',
+        originalName: 'NAVOIY AZOT'
     },
     {
         id: 7,
-        name: '🏭 ZAVOD XODIMLARI'
+        name: '🏭 ZAVOD XODIMLARI',
+        originalName: 'ZAVOD XODIMLARI'
     },
     {
         id: 8,
-        name: '❓ BOSHQA'
+        name: '❓ BOSHQA',
+        originalName: 'BOSHQA'
     }
 ]
 
 export const shortAdress = [
     {
         id: 1,
-        name: '🏙️ NAVOIY SH'
+        name: '🏙️ NAVOIY SH',
+        originalName: 'NAVOIY SH'
     },
     {
         id: 2,
-        name: '🏘️ G\'IJDUVON'
+        name: '🏘️ G\'IJDUVON',
+        originalName: "G'IJDUVON"
     },
     {
         id: 3,
-        name: '🏘️ QIZILTEPA'
+        name: '🏘️ QIZILTEPA',
+        originalName: 'QIZILTEPA'
     },
     {
         id: 4,
-        name: '🏘️ KARMANA'
+        name: '🏘️ KARMANA',
+        originalName: 'KARMANA'
     },
     {
         id: 5,
-        name: '🏘️ NAVBAHOR'
+        name: '🏘️ NAVBAHOR',
+        originalName: 'NAVBAHOR'
     },
     {
         id: 6,
-        name: '🏘️ NUROTA'
+        name: '🏘️ NUROTA',
+        originalName: 'NUROTA'
     },
     {
         id: 7,
-        name: '🏘️ KONIMEX'
+        name: '🏘️ KONIMEX',
+        originalName: 'KONIMEX'
     },
     {
         id: 8,
-        name: '🏘️ ZARAFSHON'
+        name: '🏘️ ZARAFSHON',
+        originalName: 'ZARAFSHON'
     },
     {
         id: 9,
-        name: '🏘️ UCHQUDUQ'
+        name: '🏘️ UCHQUDUQ',
+        originalName: 'UCHQUDUQ'
     },
     {
         id: 10,
-        name: '🏘️ NARPAY'
+        name: '🏘️ NARPAY',
+        originalName: 'NARPAY'
     },
     {
         id: 11,
-        name: '🏘️ ZIYOUDDIN'
+        name: '🏘️ ZIYOUDDIN',
+        originalName: 'ZIYOUDDIN'
     },
     {
         id: 12,
-        name: '🏘️ PAXTACHI'
+        name: '🏘️ PAXTACHI',
+        originalName: 'PAXTACHI'
     },
     {
         id: 13,
-        name: '🏘️ XATIRCHI'
+        name: '🏘️ XATIRCHI',
+        originalName: 'XATIRCHI'
     },
     {
         id: 14,
-        name: '🏘️ MIRBOZOR'
+        name: '🏘️ MIRBOZOR',
+        originalName: 'MIRBOZOR'
     },
     {
         id: 15,
-        name: '🏘️ KATTAQO\'RG\'ON'
+        name: '🏘️ KATTAQO\'RG\'ON',
+        originalName: "KATTAQO'RG'ON"
     },
     {
         id: 16,
-        name: '❓ BOSHQA'
+        name: '❓ BOSHQA',
+        originalName: 'BOSHQA'
+    }
+]
+
+export const operators = [
+    {
+        name:"Operator 1",
+        chatId: 1,
     }
 ]

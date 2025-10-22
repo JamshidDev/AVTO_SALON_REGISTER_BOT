@@ -1,6 +1,22 @@
 import XLSX from 'xlsx';
 import fs from 'fs';
 import path from 'path';
+import { carModels, paymentMethods, workplaceType, shortAdress } from './enums.js';
+
+// Enum display name'larini original name'larga o'zgartirish funksiyasi
+const getOriginalName = (displayName, enumArray) => {
+    const foundItem = enumArray.find(item => item.name === displayName);
+    return foundItem ? foundItem.originalName : displayName;
+};
+
+// WhereFromClient uchun mapping
+const getWhereFromClientOriginalName = (displayName) => {
+    const mapping = {
+        '🏘 Tashrif': 'Tashrif',
+        '📞 Call Center': 'Call Center'
+    };
+    return mapping[displayName] || displayName;
+};
 
 export const exportReportsToExcel = (reports, periodName) => {
     try {
@@ -8,15 +24,14 @@ export const exportReportsToExcel = (reports, periodName) => {
         const excelData = reports.map((report, index) => ({
             '№': index + 1,
             'Mijoz ismi': report.fullName,
-            'Avtomobil modeli': report.model,
-            'To\'lov turi': report.paymentMethod,
-            'Kasbi': report.workplace,
-            'Manzil': report.address,
+            'Avtomobil modeli': getOriginalName(report.model, carModels),
+            'To\'lov turi': getOriginalName(report.paymentMethod, paymentMethods),
+            'Kasbi': getOriginalName(report.workplace, workplaceType),
+            'Manzil': getOriginalName(report.address, shortAdress),
             'Telefon raqam': report.phoneNumber,
             'Status': report.status,
-            'Qayerdan': report.whereFromClient,
+            'Qayerdan': getWhereFromClientOriginalName(report.whereFromClient),
             'Ro\'yxatdan o\'tish sanasi': new Date(report.registrationDate).toLocaleDateString('uz-UZ'),
-            'Sana': new Date(report.createdAt).toLocaleDateString('ru-RU'),
             'Telegram foydalanuvchi': report.telegramUser?.username || report.telegramUser?.firstName || 'Noma\'lum'
         }));
 

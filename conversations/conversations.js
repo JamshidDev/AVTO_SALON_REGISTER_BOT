@@ -256,15 +256,40 @@ export async function registerReportConversation(conversation, ctx){
     registrationSheet.phoneNumber = ctx.message?.text
     
     // Status so'rish
+    const statusKeyboard = new Keyboard()
+        .text(ctx.t('skipStatus'))
+        .text(ctx.t('cancelOperation'))
+        .resized()
+
     await ctx.reply(ctx.t('whatIsStatus'),{
         parse_mode: 'HTML',
-        reply_markup: new Keyboard()
-        .text(ctx.t('cancelOperation'))
-        .resized(),
+        reply_markup: statusKeyboard,
     })
 
+    // Status validatsiyasi
+    const validateStatus = (message) => {
+        const validChoices = [ctx.t('skipStatus'), ctx.t('cancelOperation')];
+        return validChoices.includes(message) || (message && message.trim().length > 0);
+    }
+
     ctx = await conversation.wait()
-    registrationSheet.status = ctx.message?.text
+    
+    if (!validateStatus(ctx.message?.text)) {
+        do {
+            await ctx.reply(ctx.t('invalidTextMessage'), {
+                parse_mode: "HTML",
+                reply_markup: statusKeyboard
+            })
+            ctx = await conversation.wait()
+        } while (!validateStatus(ctx.message?.text))
+    }
+
+    // Status qiymatini belgilash
+    if (ctx.message?.text === ctx.t('skipStatus')) {
+        registrationSheet.status = '';
+    } else {
+        registrationSheet.status = ctx.message?.text;
+    }
     
     // Preview message
     const previewMessage = `

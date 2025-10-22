@@ -40,3 +40,6 @@ excelPreparing = 📁 Excel fayl tayyorlanmoqda...
 excelFileName = 📁 Fayl nomi: {$fileName}
 excelSendError = ❌ Fayl yuborishda xatolik yuz berdi
 loadingMessage = ⏳ Kuting...
+backToServiceMenu = 🔙 Xizmatlar menyusiga qaytish
+backToYearMenu = 🔙 Yil menyusiga qaytish
+skipStatus = ⏭️ O'tkazib yuborish
