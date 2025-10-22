@@ -26,5 +26,8 @@ bot.filter(hears("cancelOperation"), async (ctx) => {
     await ctx.conversation.enter("mainMenyuConversation")
 })
 
+bot.filter(hears("backToMainMenu"), async (ctx) => {
+    await ctx.conversation.enter("mainMenyuConversation")
+})
 
 export default bot
