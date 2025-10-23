@@ -108,6 +108,11 @@ export const workplaceType = [
         originalName: 'ZAVOD XODIMLARI'
     },
     {
+        id: 7,
+        name: '🏘 ISHSIZ',
+        originalName: 'ISHSIZ'
+    },
+    {
         id: 8,
         name: '❓ BOSHQA',
         originalName: 'BOSHQA'
